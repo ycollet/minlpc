@@ -14,14 +14,18 @@ The resulting C files are compiled into 4 separate libraries:
 - libnlc-big.so which contains instances of size above 10 Mo
 
 For libnlc-big.so, the corresponding files in the tests directory are gzipped. You will need to run
-    gunzip tests/*.gz
+```
+$ gunzip tests/*.gz
+```
+
 Before compiling this library.
 
 All the libraries can be compiled using cmake.
 In the minlp directory:
-    mkdir build
-    cd build
-    cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/opt/minlp-devel ..
-    make
-    sudo make install
-
+```
+$ mkdir build
+$ cd build
+$ cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/opt/minlp-devel ..
+$ make
+$ sudo make install
+```
