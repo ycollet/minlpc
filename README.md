@@ -29,3 +29,34 @@ $ cmake -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=/opt/minlp-devel ..
 $ make
 $ sudo make install
 ```
+
+To build the nlc compiler (first install gfortran):
+```
+$ cd src/f2c/lib
+$ make -f makefile.u
+$ cd ../../solvers
+$ make -f makefile.u
+$ cd examples/cport
+$ make -f makefile.u
+$ cd ..
+$ make -f makefile.u
+$ cd ../nlc
+$ make -f makefile.u
+$ make -f makefile.u mngnlc
+$ make -f makefile.u nl2nlc
+```
+
+How to use nlc:
+```
+usage: ./nlc [options] file[.nl]
+options:
+        -1 { produce feval0, ceval0 (function values only) }
+        -2 { produce feval, ceval (functions and gradients, default) }
+        -3 { produce feval0, ceval0, feval, ceval }
+        -4 { produce feval, ceval0 }
+        -5 { produce feval0, ceval }
+        -d { dense Jacobian }
+        -f { Fortran output }
+        -i { no derivatives for integer variables }
+        -k { K&R C output (default = ANSI C) }
+```
