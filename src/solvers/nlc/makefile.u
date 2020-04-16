@@ -70,8 +70,8 @@ xsum.out: $(xs0)
 
 E = $S/examples
 A = $E/rvmsg.o $E/keywds.o $S/funcadd0.o $(Aa)
-Lf2c = -lf2c
-cport = $E/cport.a
+Lf2c = $S/../f2c/lib/libf2c.a
+cport = $S/examples/cport/cport.a
 # $(cport) = PORT subroutine library.
 # Ask netlib@netlib.org to
 #	send dmngb dmnhb dn2g dn2gb dq7rgs from port

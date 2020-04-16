@@ -42,7 +42,7 @@ CFLAGS = -O -I$S
 
 L = -lm -ldl
 Lf2c = -lf2c -ldl
-cport = cport.a
+cport = cport/cport.a
 
 # $(cport) = PORT subroutine library.  For the present examples,
 # it suffices to build cport.a from a subset of the port/*.f files in
@@ -118,11 +118,11 @@ nl2: $(nl2)
 
 fmng1 = fmng1.o $A
 fmng1: $(fmng1)
-	$(CC) -o fmng1 $(fmng1) cport.a ../../f2c/lib/libf2c.a $L -lgfortran
+	$(CC) -o fmng1 $(fmng1) cport/cport.a ../../f2c/lib/libf2c.a $L -lgfortran
 
 fnl21 = fnl21.o $A
 fnl21: $(fnl21)
-	$(CC) -o fnl21 $(fnl21) cport.a ../../f2c/lib/libf2c.a $L -lgfortran
+	$(CC) -o fnl21 $(fnl21) cport/cport.a ../../f2c/lib/libf2c.a $L -lgfortran
 
 # tn.f and blas.f are available from netlib: ask for "tn from opt".
 
