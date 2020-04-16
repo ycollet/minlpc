@@ -1,0 +1,16 @@
+install/*
+build/*
+*.bak
+*.pyc
+*.pyo
+*~
+*.o
+
+*.orig
+.#*
+#*
+.project
+src/.cproject
+src/.settings/
+test/BugTracking/TestInflows/
+.vscode/

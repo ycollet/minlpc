@@ -1,0 +1,16 @@
+20190611
+  Correct a comment about AMPLFUNC_STROUT in funcadd.h; asldate.c not
+changed.
+
+20190605
+  New file arith.h1.  On many systems, it may suffice to use arith.h1
+as arith.h (by copying or linking arith.h1 to arith.h).
+  mach.c, stderr.c:  add simple tests of whether the ASL was compiled
+with the right arith.h, assuming IEEE arithmetic.  The tests can pass
+with the wrong arith.h without preventing faults if, e.g., Double_Align
+needed to be #defined in arith.h.  It is best to "make clean; make"
+in the solvers directory after changing compiler options or compilers
+for compiling the ASL.  People using cross-compilers must take suitable
+care to get arith.h right, ideally using an arith.h derived on the
+target system, with the target compiler options and compiler, though
+using arith.h1 as arith.h may often work.
