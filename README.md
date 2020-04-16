@@ -3,9 +3,9 @@ The original files come from http://www.minlplib.org/
 The nlc compiler comes from https://ampl.com/netlib/ampl/solvers/nlc.tgz.
 
 To compile nlc, these archive where required:
-- https:////ampl.com/netlib/ampl/solvers/nlc.tgz
-- https:////ampl.com/netlib/ampl/solvers/examples.tgz
-- https:////ampl.com/netlib/ampl/solvers.tgz
+- https://ampl.com/netlib/ampl/solvers/nlc.tgz
+- https://ampl.com/netlib/ampl/solvers/examples.tgz
+- https://ampl.com/netlib/ampl/solvers.tgz
 
 The resulting C files are compiled into 4 separate libraries:
 - libnlc-small.so which contains instances of size below 100ko
