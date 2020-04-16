@@ -55,8 +55,8 @@ cport = cport.a
 
 Lp = $(cport) $(Lf2c)
 
-FC = fc
-FFLAGS =
+FC = gfortran
+FFLAGS = -ffixed-form
 # Fortran compiler (fc script provided with f2c)
 
 .f.o:
@@ -118,17 +118,17 @@ nl2: $(nl2)
 
 fmng1 = fmng1.o $A
 fmng1: $(fmng1)
-	$(CC) -o fmng1 $(fmng1) $(Lp) $L
+	$(CC) -o fmng1 $(fmng1) cport.a ../../f2c/lib/libf2c.a $L -lgfortran
 
 fnl21 = fnl21.o $A
 fnl21: $(fnl21)
-	$(CC) -o fnl21 $(fnl21) $(Lp) $L
+	$(CC) -o fnl21 $(fnl21) cport.a ../../f2c/lib/libf2c.a $L -lgfortran
 
 # tn.f and blas.f are available from netlib: ask for "tn from opt".
 
 tn = tnmain.o tn.o blas.o $A
 tn: $(tn)
-	$(CC) -o tn $(tn) $(Lf2c) $L
+	$(CC) -o tn $(tn) ../../f2c/lib/libf2c.a $L -lgfortran
 
 # ve08ad.f is available from netlib: ask for "ve08 from opt".
 # See comments in README about a possible adjustment to ve08ad.f .
@@ -136,11 +136,11 @@ tn: $(tn)
 v8.o: ve08.c
 v8 = v8.o ve08ad.o $A
 v8: $(v8)
-	$(CC) $(CFLAGS) -o v8 $(v8) $(Lp) $L
+	$(CC) $(CFLAGS) -o v8 $(v8) $(Lp) $L -lgfortran
 
 ve08 = ve08.o ve08ad.o $A
 ve08: $(ve08)
-	$(CC) -o ve08 $(ve08) $(Lf2c) $L
+	$(CC) -o ve08 $(ve08) $(Lf2c) $L -lgfortran
 
 dualconv = dualconv.c $(Af)
 dualconv: $(dualconv)

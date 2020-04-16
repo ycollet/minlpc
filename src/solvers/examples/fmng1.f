@@ -58,7 +58,6 @@
 	integer mxrow, mxcol
 	integer jp(nmax+1), ui(1)
 	integer*2 ji(nzmax)
-	integer ui(1)
 	double precision l(nmax), u(nmax), lrhs(mmax), urhs(mmax)
 	double precision inf, ur(1)
 
